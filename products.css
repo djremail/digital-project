@@ -1,0 +1,1392 @@
+@font-face {
+  font-family: "TT Hoves";
+  src: url("fonts/TTHoves-Light.ttf") format("truetype"), url("fonts/TTHoves-Light.woff") format("woff"), url("fonts/TTHoves-Light.woff2") format("woff2"), url("fonts/TTHoves-Light.eot") format("embedded-opentype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("fonts/TTHoves-Regular.ttf") format("truetype"), url("fonts/TTHoves-Regular.woff") format("woff"), url("fonts/TTHoves-Regular.woff2") format("woff2"), url("fonts/TTHoves-Regular.eot") format("embedded-opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("fonts/TTHoves-Medium.ttf") format("truetype"), url("fonts/TTHoves-Medium.woff") format("woff"), url("fonts/TTHoves-Medium.woff2") format("woff2"), url("fonts/TTHoves-Medium.eot") format("embedded-opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("fonts/TTHoves-Bold.ttf") format("truetype"), url("fonts/TTHoves-Bold.woff") format("woff"), url("fonts/TTHoves-Bold.woff2") format("woff2"), url("fonts/TTHoves-Bold.eot") format("embedded-opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "SFPro";
+  src: url("fonts/SFProDisplay-Black.ttf") format("truetype"), url("fonts/SFProDisplay-Black.woff") format("woff"), url("fonts/SFProDisplay-Black.woff2") format("woff2"), url("fonts/SFProDisplay-Black.eot") format("embedded-opentype");
+  font-weight: 900;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-weight: 300;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+}
+button:hover {
+  opacity: 0.7;
+}
+button:active {
+  transform: scale(0.95);
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.header {
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__img a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header__burger {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header__burger {
+    display: block;
+    font-size: 25px;
+    margin-right: 40px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  .header__burger:hover {
+    color: #BDBDBD;
+  }
+}
+
+.header__nav {
+  margin-right: 134px;
+}
+@media (max-width: 1199px) {
+  .header__nav {
+    margin-right: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+}
+
+.header__nav-navigation {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  list-style: none;
+}
+@media (max-width: 1199px) {
+  .header__nav-navigation {
+    gap: 25px;
+  }
+}
+.header__nav-navigation li {
+  color: #333;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.75rem;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  padding: 5px 0;
+  position: relative;
+}
+.header__nav-navigation li:before, .header__nav-navigation li:after {
+  content: "";
+  position: absolute;
+  background: #333;
+  height: 1px;
+  width: 0;
+  transition: all 0.5s ease-in-out;
+}
+.header__nav-navigation li:before {
+  top: 0;
+  left: 0;
+}
+.header__nav-navigation li:after {
+  bottom: 0;
+  left: 0;
+}
+.header__nav-navigation li:hover:after, .header__nav-navigation li:hover:before {
+  width: 100%;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 770px;
+  align-items: center;
+}
+@media (max-width: 1399px) {
+  .page {
+    grid-template-columns: 1fr 650px;
+  }
+}
+@media (max-width: 1199px) {
+  .page {
+    grid-template-columns: 1fr 550px;
+  }
+}
+@media (max-width: 991px) {
+  .page {
+    grid-template-columns: repeat(1, 600px);
+    justify-content: center;
+  }
+}
+@media (max-width: 700px) {
+  .page {
+    grid-template-columns: repeat(1, 100%);
+    justify-content: center;
+  }
+}
+@media (max-width: 991px) {
+  .page__info {
+    order: 2;
+    margin-top: 40px;
+  }
+}
+.page__info span {
+  display: block;
+  color: #BDBDBD;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 4rem;
+}
+@media (max-width: 756px) {
+  .page__info span {
+    color: #BDBDBD;
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 3rem;
+  }
+}
+.page__info h1 {
+  color: #333;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4rem;
+}
+@media (max-width: 756px) {
+  .page__info h1 {
+    color: #333;
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3rem;
+  }
+}
+.page__info .slider__adjustment {
+  margin-top: 90px;
+}
+@media (max-width: 991px) {
+  .page__info .slider__adjustment {
+    margin-top: 40px;
+  }
+}
+.page__info .slider__adjustment-arrows {
+  margin-bottom: 94px;
+}
+@media (max-width: 991px) {
+  .page__info .slider__adjustment-arrows {
+    margin-bottom: 40px;
+  }
+}
+.page__info .slider__adjustment-arrows button {
+  width: 53px;
+  height: 53px;
+  background: #ffffff;
+  border: 1px solid #F2F2F2;
+  margin-right: 23px;
+  transition: all 0.5s ease-in-out;
+}
+.page__info .slider__adjustment-arrows button:hover {
+  background: #F9F9F9;
+}
+.page__info .slider__adjustment-count {
+  display: flex;
+  gap: 28px;
+}
+.page__info .slider__adjustment-count .count-text, .page__info .slider__adjustment-count .count-all {
+  color: #BDBDBD;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+}
+.page__slider .slider__image {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.page__slider .slider__image-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 50px;
+  background: #ffffff;
+  color: #333;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 25px;
+  transition: all 0.5s ease-in-out;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+@media (max-width: 756px) {
+  .page__slider .slider__image-btn {
+    padding: 12px 25px;
+  }
+}
+.page__slider .slider__image-btn:hover {
+  background: #5b5757;
+  color: white;
+}
+
+.about {
+  margin-top: 120px;
+  padding: 0 70px 0 100px;
+  background: #FBFBFB;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+}
+@media (max-width: 991px) {
+  .about {
+    margin-top: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .about {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 1199px) {
+  .about {
+    padding: 15px 30px;
+  }
+}
+@media (max-width: 991px) {
+  .about {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.about__img-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  transform: translateY(30px);
+}
+@media (max-width: 991px) {
+  .about__img-container {
+    transform: translateY(-50px);
+    width: 40%;
+  }
+}
+@media (max-width: 991px) {
+  .about .about__img {
+    width: 40%;
+  }
+}
+.about__info {
+  max-width: 40%;
+}
+@media (max-width: 1199px) {
+  .about__info {
+    max-width: 45%;
+  }
+}
+@media (max-width: 991px) {
+  .about__info {
+    max-width: 85%;
+  }
+}
+@media (max-width: 470px) {
+  .about__info {
+    max-width: 100%;
+  }
+}
+.about__info h2 {
+  color: #BDBDBD;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 4rem;
+  margin-bottom: 20px;
+}
+@media (max-width: 1199px) {
+  .about__info h2 {
+    color: #BDBDBD;
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2.5rem;
+  }
+}
+.about__info p {
+  color: #000;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+.about__info button {
+  display: flex;
+  align-items: center;
+  padding: 30px 65px;
+  background: #ffffff;
+  color: #333;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 0.75rem;
+  transition: all 0.5s ease-in-out;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+@media (max-width: 1199px) {
+  .about__info button {
+    padding: 18px 30px;
+  }
+}
+
+.tasks {
+  margin-top: 150px;
+}
+@media (max-width: 991px) {
+  .tasks {
+    margin-top: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .tasks {
+    margin-top: 60px;
+  }
+}
+.tasks h4 {
+  color: #BDBDBD;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 4rem;
+}
+@media (max-width: 470px) {
+  .tasks h4 {
+    color: #BDBDBD;
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 3rem;
+    margin-bottom: 30px;
+  }
+}
+.tasks__container {
+  display: flex;
+}
+@media (max-width: 991px) {
+  .tasks__container {
+    flex-wrap: wrap;
+  }
+}
+.tasks__container .tasks__item {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  gap: 30px;
+}
+@media (max-width: 991px) {
+  .tasks__container .tasks__item {
+    width: 100%;
+  }
+}
+@media (max-width: 470px) {
+  .tasks__container .tasks__item {
+    margin-bottom: 30px;
+  }
+}
+.tasks__container .tasks__item h2 {
+  color: #F2F2F2;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 200px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  font-family: "SFPro";
+}
+@media (max-width: 991px) {
+  .tasks__container .tasks__item h2 {
+    font-size: 150px;
+  }
+}
+@media (max-width: 470px) {
+  .tasks__container .tasks__item h2 {
+    font-size: 80px;
+  }
+}
+.tasks__container .tasks__item .tasks__item-text {
+  max-width: 430px;
+  font-size: 20px;
+}
+@media (max-width: 1120px) {
+  .tasks__container .tasks__item .tasks__item-text {
+    font-size: 18px;
+  }
+}
+.tasks__container .tasks__item p {
+  max-width: 279px;
+  color: #333;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem;
+}
+@media (max-width: 1120px) {
+  .tasks__container .tasks__item p {
+    font-size: 18px;
+    line-height: 1.8rem;
+  }
+}
+@media (max-width: 991px) {
+  .tasks__container .tasks__item-right {
+    justify-content: flex-end;
+  }
+}
+
+.our_product {
+  margin-top: 120px;
+}
+@media (max-width: 991px) {
+  .our_product {
+    margin-top: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .our_product {
+    margin-top: 60px;
+  }
+}
+.our_product h3 {
+  margin-bottom: 60px;
+  color: #BDBDBD;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 4rem;
+}
+.our_product .our_product-container-up .img, .our_product .our_product-container-down .img, .our_product .our_product-container .our_product-hidden .img {
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .our_product .our_product-container-up .img, .our_product .our_product-container-down .img, .our_product .our_product-container .our_product-hidden .img {
+    height: 200px;
+  }
+}
+.our_product .our_product-container-up .img img, .our_product .our_product-container-down .img img, .our_product .our_product-container .our_product-hidden .img img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 767px) {
+  .our_product .our_product-container-up .img img, .our_product .our_product-container-down .img img, .our_product .our_product-container .our_product-hidden .img img {
+    width: 100%;
+    object-position: center center;
+  }
+}
+.our_product .our_product-container-up .img__hover-container, .our_product .our_product-container-down .img__hover-container, .our_product .our_product-container .our_product-hidden .img__hover-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: rgba(255, 255, 255, 0);
+  background: rgba(51, 51, 51, 0);
+  transition: all 1.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 991px) {
+  .our_product .our_product-container-up .img__hover-container, .our_product .our_product-container-down .img__hover-container, .our_product .our_product-container .our_product-hidden .img__hover-container {
+    background: rgba(51, 51, 51, 0.57);
+  }
+}
+.our_product .our_product-container-up .img__hover-container .img__hover-wrapper, .our_product .our_product-container-down .img__hover-container .img__hover-wrapper, .our_product .our_product-container .our_product-hidden .img__hover-container .img__hover-wrapper {
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .our_product .our_product-container-up .img__hover-container .img__hover-wrapper, .our_product .our_product-container-down .img__hover-container .img__hover-wrapper, .our_product .our_product-container .our_product-hidden .img__hover-container .img__hover-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.our_product .our_product-container-up .img__hover-container h2, .our_product .our_product-container-down .img__hover-container h2, .our_product .our_product-container .our_product-hidden .img__hover-container h2 {
+  color: rgba(255, 255, 255, 0);
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1px;
+  transition: all 1s ease-in-out;
+  margin-bottom: 8px;
+}
+@media (max-width: 991px) {
+  .our_product .our_product-container-up .img__hover-container h2, .our_product .our_product-container-down .img__hover-container h2, .our_product .our_product-container .our_product-hidden .img__hover-container h2 {
+    color: rgb(255, 255, 255);
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.2rem;
+  }
+}
+@media (max-width: 767px) {
+  .our_product .our_product-container-up .img__hover-container h2, .our_product .our_product-container-down .img__hover-container h2, .our_product .our_product-container .our_product-hidden .img__hover-container h2 {
+    color: rgb(255, 255, 255);
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.2rem;
+    text-align: center;
+  }
+}
+.our_product .our_product-container-up .img__hover-container h5, .our_product .our_product-container-down .img__hover-container h5, .our_product .our_product-container .our_product-hidden .img__hover-container h5 {
+  color: rgba(255, 255, 255, 0);
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.2rem;
+  transition: all 1s ease-in-out;
+  margin-bottom: 8px;
+}
+@media (max-width: 991px) {
+  .our_product .our_product-container-up .img__hover-container h5, .our_product .our_product-container-down .img__hover-container h5, .our_product .our_product-container .our_product-hidden .img__hover-container h5 {
+    color: rgb(255, 255, 255);
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2rem;
+  }
+}
+@media (max-width: 767px) {
+  .our_product .our_product-container-up .img__hover-container h5, .our_product .our_product-container-down .img__hover-container h5, .our_product .our_product-container .our_product-hidden .img__hover-container h5 {
+    color: rgb(255, 255, 255);
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.2rem;
+    text-align: center;
+  }
+}
+.our_product .our_product-container-up .img__hover-container button, .our_product .our_product-container-down .img__hover-container button, .our_product .our_product-container .our_product-hidden .img__hover-container button {
+  color: inherit;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid transparent;
+  transform: translateX(-5px);
+  transition: all 0.1s ease-in-out;
+}
+.our_product .our_product-container-up .img__hover-container button svg, .our_product .our_product-container-down .img__hover-container button svg, .our_product .our_product-container .our_product-hidden .img__hover-container button svg {
+  margin-left: 12px;
+  transition: all 1.5s ease-in-out;
+  fill: rgba(255, 255, 255, 0);
+}
+@media (max-width: 991px) {
+  .our_product .our_product-container-up .img__hover-container button, .our_product .our_product-container-down .img__hover-container button, .our_product .our_product-container .our_product-hidden .img__hover-container button {
+    color: white;
+    transition: all 0.1s ease-in-out;
+    border-color: white;
+  }
+  .our_product .our_product-container-up .img__hover-container button:active, .our_product .our_product-container-down .img__hover-container button:active, .our_product .our_product-container .our_product-hidden .img__hover-container button:active {
+    transition: all 0.5s ease-in-out;
+    transform: scale(0.96);
+  }
+  .our_product .our_product-container-up .img__hover-container button svg, .our_product .our_product-container-down .img__hover-container button svg, .our_product .our_product-container .our_product-hidden .img__hover-container button svg {
+    fill: rgb(255, 255, 255);
+  }
+}
+.our_product .our_product-container-up .img:hover .img__hover-container, .our_product .our_product-container-down .img:hover .img__hover-container, .our_product .our_product-container .our_product-hidden .img:hover .img__hover-container {
+  background: rgba(51, 51, 51, 0.57);
+  color: #FFFFFF;
+}
+.our_product .our_product-container-up .img:hover .img__hover-container h2, .our_product .our_product-container-down .img:hover .img__hover-container h2, .our_product .our_product-container .our_product-hidden .img:hover .img__hover-container h2 {
+  color: rgb(255, 255, 255);
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4rem;
+}
+@media (max-width: 1199px) {
+  .our_product .our_product-container-up .img:hover .img__hover-container h2, .our_product .our_product-container-down .img:hover .img__hover-container h2, .our_product .our_product-container .our_product-hidden .img:hover .img__hover-container h2 {
+    color: rgb(255, 255, 255);
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.4rem;
+  }
+}
+@media (max-width: 767px) {
+  .our_product .our_product-container-up .img:hover .img__hover-container h2, .our_product .our_product-container-down .img:hover .img__hover-container h2, .our_product .our_product-container .our_product-hidden .img:hover .img__hover-container h2 {
+    color: rgb(255, 255, 255);
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.4rem;
+  }
+}
+.our_product .our_product-container-up .img:hover .img__hover-container h5, .our_product .our_product-container-down .img:hover .img__hover-container h5, .our_product .our_product-container .our_product-hidden .img:hover .img__hover-container h5 {
+  color: rgb(255, 255, 255);
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3rem;
+}
+@media (max-width: 1199px) {
+  .our_product .our_product-container-up .img:hover .img__hover-container h5, .our_product .our_product-container-down .img:hover .img__hover-container h5, .our_product .our_product-container .our_product-hidden .img:hover .img__hover-container h5 {
+    color: rgb(255, 255, 255);
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.4rem;
+  }
+}
+.our_product .our_product-container-up .img:hover .img__hover-container button, .our_product .our_product-container-down .img:hover .img__hover-container button, .our_product .our_product-container .our_product-hidden .img:hover .img__hover-container button {
+  color: inherit;
+  transition: all 0.1s ease-in-out;
+}
+.our_product .our_product-container-up .img:hover .img__hover-container button:hover, .our_product .our_product-container-down .img:hover .img__hover-container button:hover, .our_product .our_product-container .our_product-hidden .img:hover .img__hover-container button:hover {
+  border-color: silver;
+}
+.our_product .our_product-container-up .img:hover .img__hover-container button:active, .our_product .our_product-container-down .img:hover .img__hover-container button:active, .our_product .our_product-container .our_product-hidden .img:hover .img__hover-container button:active {
+  transition: all 0.5s ease-in-out;
+  transform: scale(0.96);
+}
+.our_product .our_product-container-up .img:hover .img__hover-container button svg, .our_product .our_product-container-down .img:hover .img__hover-container button svg, .our_product .our_product-container .our_product-hidden .img:hover .img__hover-container button svg {
+  fill: rgb(255, 255, 255);
+}
+.our_product .our_product-container-up {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 30px;
+}
+@media (max-width: 767px) {
+  .our_product .our_product-container-up {
+    grid-template-columns: repeat(1, 90%);
+    grid-gap: 15px;
+    justify-content: center;
+  }
+}
+@media (max-width: 470px) {
+  .our_product .our_product-container-up {
+    grid-template-columns: repeat(1, 100%);
+    grid-gap: 15px;
+    justify-content: center;
+  }
+}
+.our_product .our_product-container-down {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 23.5% 41.7% 33%);
+  grid-column-gap: 30px;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .our_product .our_product-container-down {
+    grid-template-columns: repeat(1, 90%);
+    grid-gap: 15px;
+    justify-content: center;
+    margin: 15px 0;
+  }
+}
+@media (max-width: 470px) {
+  .our_product .our_product-container-down {
+    grid-template-columns: repeat(1, 100%);
+    grid-gap: 15px;
+    justify-content: center;
+  }
+}
+.our_product .our_product-container .our_product-hidden.hidden {
+  display: none;
+  overflow: hidden;
+  transition: all 1s ease;
+}
+.our_product .our_product-container .our_product-hidden {
+  transition: all 1s ease;
+  width: auto;
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 23.5% 41.7% 33%);
+  grid-column-gap: 30px;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .our_product .our_product-container .our_product-hidden {
+    grid-template-columns: repeat(1, 90%);
+    grid-gap: 15px;
+    justify-content: center;
+    margin: 15px 0;
+  }
+}
+@media (max-width: 470px) {
+  .our_product .our_product-container .our_product-hidden {
+    grid-template-columns: repeat(1, 100%);
+    grid-gap: 15px;
+    justify-content: center;
+  }
+}
+.our_product .our_product-container-button {
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 767px) {
+  .our_product .our_product-container-button {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.our_product .our_product-container-button button {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.75rem;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  background: #333;
+  padding: 30px 40px;
+}
+@media (max-width: 991px) {
+  .our_product .our_product-container-button button {
+    padding: 12px 20px;
+  }
+}
+.our_product .our_product-container-button button svg {
+  fill: #FFFFFF;
+  margin-left: 12px;
+}
+.our_product .our_product-container-button button:hover {
+  background: #0c0c0c;
+  opacity: 1;
+}
+
+.contacts {
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+@media (max-width: 991px) {
+  .contacts {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .contacts {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+.contacts h2 {
+  color: #BDBDBD;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 4rem;
+  margin-bottom: 22px;
+}
+@media (max-width: 420px) {
+  .contacts h2 {
+    color: #BDBDBD;
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 3rem;
+  }
+}
+.contacts__container {
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 767px) {
+  .contacts__container {
+    flex-direction: column;
+  }
+}
+.contacts__container-form {
+  width: 391px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .contacts__container-form {
+    order: 2;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.contacts__container-form input, .contacts__container-form textarea {
+  padding: 15px 21px;
+  background: #F3F3F3;
+  border: none;
+  outline: none;
+  color: #8D8D8D;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.56px;
+}
+.contacts__container-form input::placeholder, .contacts__container-form textarea::placeholder {
+  color: #8D8D8D;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.56px;
+}
+.contacts__container-form input::placeholder, .contacts__container-form textarea::placeholder {
+  position: relative;
+}
+.contacts__container-form textarea {
+  min-height: 147px;
+  resize: none;
+}
+.contacts__container-form button {
+  margin-top: 67px;
+  width: 222px;
+  height: 71px;
+  color: #FFF;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.75rem;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.contacts__container-form button svg {
+  fill: #FFFFFF;
+}
+.contacts__container-form p {
+  position: absolute;
+  left: 25px;
+  bottom: 92px;
+  color: #333;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.contacts__container-img {
+  flex: 1 1 auto;
+  height: 371px;
+}
+@media (max-width: 767px) {
+  .contacts__container-img {
+    order: 1;
+    height: 150px;
+    width: 100%;
+  }
+  .contacts__container-img img {
+    width: 100%;
+    object-position: top center;
+  }
+}
+.contacts__container-img img {
+  height: 100%;
+}
+
+.footer {
+  padding: 58px 0 0;
+  background: #2C2C2C;
+}
+.footer a {
+  transition: all 0.5s ease-in-out;
+}
+.footer a:hover {
+  color: red;
+}
+.footer .container {
+  display: flex;
+  margin-bottom: 60px;
+}
+@media (max-width: 991px) {
+  .footer .container {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 867px) {
+  .footer .container {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 640px) {
+  .footer .container {
+    row-gap: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer p {
+  color: #FFF;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 25px;
+}
+.footer__img {
+  padding: 0 9.1% 0 0;
+}
+@media (max-width: 991px) {
+  .footer__img {
+    padding: 0;
+  }
+}
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  margin-right: 14.2%;
+}
+@media (max-width: 991px) {
+  .footer__list {
+    margin-right: 0;
+  }
+}
+@media (max-width: 640px) {
+  .footer__list {
+    width: 45%;
+    order: 3;
+  }
+}
+@media (max-width: 480px) {
+  .footer__list {
+    width: 100%;
+    text-align: center;
+  }
+}
+.footer__list li {
+  margin-bottom: 16px;
+  color: #FFF;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+}
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  margin-right: 6.45%;
+}
+@media (max-width: 991px) {
+  .footer__contacts {
+    margin-right: 0;
+  }
+}
+@media (max-width: 640px) {
+  .footer__contacts {
+    width: 45%;
+    order: 4;
+  }
+}
+@media (max-width: 480px) {
+  .footer__contacts {
+    width: 100%;
+    align-items: center;
+  }
+}
+.footer__contacts a {
+  margin-bottom: 33px;
+  color: #FFF;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  display: flex;
+}
+.footer__contacts a svg {
+  margin-right: 14px;
+}
+@media (max-width: 867px) {
+  .footer__social {
+    width: 50%;
+  }
+}
+@media (max-width: 640px) {
+  .footer__social {
+    width: 45%;
+    order: 2;
+  }
+}
+@media (max-width: 480px) {
+  .footer__social {
+    width: 100%;
+    text-align: center;
+  }
+}
+.footer__social-container {
+  display: flex;
+  gap: 40px;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+@media (max-width: 480px) {
+  .footer__social-container {
+    justify-content: center;
+  }
+}
+.footer__info {
+  padding: 24px 0;
+  text-align: center;
+  color: rgba(200, 200, 200, 0.5);
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  font-family: "Open Sans";
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.modal .modal__nav {
+  margin-right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 70px 0;
+  position: fixed;
+  top: -300px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #FFFFFF;
+  transition: all 1s ease-in-out;
+}
+@media (max-width: 550px) {
+  .modal .modal__nav {
+    padding: 40px 0;
+  }
+}
+.modal .modal__nav .header__nav-navigation {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  list-style: none;
+}
+@media (max-width: 1199px) {
+  .modal .modal__nav .header__nav-navigation {
+    gap: 25px;
+  }
+}
+@media (max-width: 550px) {
+  .modal .modal__nav .header__nav-navigation {
+    flex-direction: column;
+  }
+}
+.modal .modal__nav.active {
+  top: 0;
+  transition: all 1.4s ease-in-out;
+}
+.modal .close-modal {
+  position: absolute;
+  top: 22px;
+  right: 32px;
+  font-size: 31px;
+}
+
+.company__page-wrapper {
+  padding: 40px 0 80px;
+  position: relative;
+}
+.company__page-wrapper p {
+  color: #333;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 2rem;
+  text-align: justify;
+  max-width: 90%;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .company__page-wrapper p {
+    color: #333;
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.6rem;
+  }
+}
+@media (max-width: 470px) {
+  .company__page-wrapper p {
+    color: #333;
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.3rem;
+  }
+}
+.company__page-wrapper .company-img1 {
+  position: absolute;
+  top: -24px;
+  left: -67px;
+  opacity: 0.5;
+  z-index: -1;
+}
+@media (max-width: 767px) {
+  .company__page-wrapper .company-img1 {
+    opacity: 0.4;
+  }
+}
+@media (max-width: 470px) {
+  .company__page-wrapper .company-img1 {
+    opacity: 0.2;
+  }
+}
+.company__page-wrapper .company-img2 {
+  position: absolute;
+  top: 140px;
+  right: -145px;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.galery-page-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 40px 0 5px;
+}
+.galery-page-container img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.go-to-main {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+.go-to-main-link {
+  padding: 15px 25px;
+  background: #2C2C2C;
+  border: 1px solid black;
+  color: #FFFFFF;
+  transition: all 0.5s ease-in-out;
+}
+.go-to-main-link:hover {
+  background: #676262;
+}
+.go-to-main-link:active {
+  transform: scale(0.95);
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  src: url("fonts/TTHoves-Light.ttf") format("truetype"), url("fonts/TTHoves-Light.woff") format("woff"), url("fonts/TTHoves-Light.woff2") format("woff2"), url("fonts/TTHoves-Light.eot") format("embedded-opentype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("fonts/TTHoves-Regular.ttf") format("truetype"), url("fonts/TTHoves-Regular.woff") format("woff"), url("fonts/TTHoves-Regular.woff2") format("woff2"), url("fonts/TTHoves-Regular.eot") format("embedded-opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("fonts/TTHoves-Medium.ttf") format("truetype"), url("fonts/TTHoves-Medium.woff") format("woff"), url("fonts/TTHoves-Medium.woff2") format("woff2"), url("fonts/TTHoves-Medium.eot") format("embedded-opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("fonts/TTHoves-Bold.ttf") format("truetype"), url("fonts/TTHoves-Bold.woff") format("woff"), url("fonts/TTHoves-Bold.woff2") format("woff2"), url("fonts/TTHoves-Bold.eot") format("embedded-opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "SFPro";
+  src: url("fonts/SFProDisplay-Black.ttf") format("truetype"), url("fonts/SFProDisplay-Black.woff") format("woff"), url("fonts/SFProDisplay-Black.woff2") format("woff2"), url("fonts/SFProDisplay-Black.eot") format("embedded-opentype");
+  font-weight: 900;
+}
+.product-container {
+  max-width: 100%;
+  padding: 40px 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.small-images-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 15px;
+}
+.small-images-container .img-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.small-images-container .small-image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-title {
+  padding: 30px 0;
+  color: #BDBDBD;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 4rem;
+}
+@media (max-width: 567px) {
+  .product-title {
+    color: #BDBDBD;
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 3rem;
+  }
+}
+@media (max-width: 350px) {
+  .product-title {
+    color: #BDBDBD;
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+}
+
+.product-description {
+  color: #333;
+  font-family: "TT Hoves", Arial, sans-serif;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+@media (max-width: 350px) {
+  .product-description {
+    color: #333;
+    font-family: "TT Hoves", Arial, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1rem;
+  }
+}
+
+/*# sourceMappingURL=products.css.map */

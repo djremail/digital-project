@@ -1,0 +1,64 @@
+$grey: #BDBDBD;
+$black: #333;
+
+@mixin customText($color: #000, $font-size: 1rem, $font-weight: 300, $line-height: 25px) {
+  color: $color;
+  font-family: 'TT Hoves', Arial, sans-serif;
+  font-size: $font-size;
+  font-style: normal;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin transition($property: all, $duration: .5s, $timing-function: ease-in-out) {
+  transition: $property $duration $timing-function;
+}
+
+
+
+@font-face {
+  font-family: 'TT Hoves';
+  src: url('fonts/TTHoves-Light.ttf') format('truetype'),
+  url('fonts/TTHoves-Light.woff') format('woff'),
+  url('fonts/TTHoves-Light.woff2') format('woff2'),
+  url('fonts/TTHoves-Light.eot') format('embedded-opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'TT Hoves';
+  src: url('fonts/TTHoves-Regular.ttf') format('truetype'),
+  url('fonts/TTHoves-Regular.woff') format('woff'),
+  url('fonts/TTHoves-Regular.woff2') format('woff2'),
+  url('fonts/TTHoves-Regular.eot') format('embedded-opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'TT Hoves';
+  src: url('fonts/TTHoves-Medium.ttf') format('truetype'),
+  url('fonts/TTHoves-Medium.woff') format('woff'),
+  url('fonts/TTHoves-Medium.woff2') format('woff2'),
+  url('fonts/TTHoves-Medium.eot') format('embedded-opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'TT Hoves';
+  src: url('fonts/TTHoves-Bold.ttf') format('truetype'),
+  url('fonts/TTHoves-Bold.woff') format('woff'),
+  url('fonts/TTHoves-Bold.woff2') format('woff2'),
+  url('fonts/TTHoves-Bold.eot') format('embedded-opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('fonts/SFProDisplay-Black.ttf') format('truetype'),
+  url('fonts/SFProDisplay-Black.woff') format('woff'),
+  url('fonts/SFProDisplay-Black.woff2') format('woff2'),
+  url('fonts/SFProDisplay-Black.eot') format('embedded-opentype');
+  font-weight: 900;
+}
+
+
